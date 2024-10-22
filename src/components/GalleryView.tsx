@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './GalleryView.css'; 
 
-// const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
 
 interface PokemonType {
   type: { name: string };

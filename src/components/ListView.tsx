@@ -5,7 +5,6 @@ import { Box, ListItem, ListItemButton, ListItemText, Select, MenuItem, TextFiel
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import './ListView.css'; // Import the external CSS file
 
-const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
 
 interface Pokemon {
   name: string;
@@ -25,7 +24,7 @@ const ListView: React.FC = () => {
     const fetchPokemon = async () => {
       const pokemonPromises = [];
       for (let i = 1; i <= 50; i++) {
-        pokemonPromises.push(axios.get(`${proxyUrl}https://pokeapi.co/api/v2/pokemon/${i}`));
+        pokemonPromises.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`));
       }
       const responses = await Promise.all(pokemonPromises);
       setPokemonList(responses.map((res) => res.data));

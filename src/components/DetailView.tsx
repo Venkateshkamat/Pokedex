@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./DetailView.css";
 
-const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
 
 interface PokemonType {
   type: { name: string };
@@ -38,7 +37,7 @@ const DetailView: React.FC = () => {
     const fetchPokemon = async () => {
       try {
         const response = await axios.get(
-          `${proxyUrl}https://pokeapi.co/api/v2/pokemon/${name}`
+          `https://pokeapi.co/api/v2/pokemon/${name}`
         );
         setPokemon(response.data);
       } catch (error) {

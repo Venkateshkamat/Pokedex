@@ -19,8 +19,8 @@ export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children })
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
 
   useEffect(() => {
-    const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
-    axios.get(`${proxyUrl}https://pokeapi.co/api/v2/pokemon?limit=100`).then((response) => {
+    
+    axios.get(`https://pokeapi.co/api/v2/pokemon?limit=100`).then((response) => {
       setPokemonList(response.data.results);
     });
   }, []);
