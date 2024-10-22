@@ -1,0 +1,43 @@
+/* Navbar container styling */
+.navbar {
+    background-color: #ffcb05;
+    box-shadow: none;
+    height: 70px;
+    
+  }
+  
+  /* Toolbar inside the navbar */
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 16px;
+  }
+  
+  /* Pokémon logo styling */
+  .logo-container {
+    display: flex;
+    align-items: flex-start;
+    .logo{
+        font-family: Montserrat, sans-serif;
+    }
+  }
+  
+  .pokemon-logo {
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  /* Navigation buttons styling */
+  .nav-links button {
+    margin-left: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #3b4cca;
+  }
+  
+  .nav-links button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  

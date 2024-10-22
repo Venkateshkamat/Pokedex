@@ -1,0 +1,75 @@
+/* DetailView.css */
+
+.detail-container {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  
+  .layout-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .details{
+    text-align: left;
+    width: 50%;
+  }
+
+  .subtitle{
+    padding: 10px 0px;
+    font-size: 20px;
+  }
+
+
+  .pokemon-name {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ffcb05;
+    text-transform: uppercase;
+  }
+  
+  .pokemon-image {
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+  
+  .type-list, .ability-list, .stat-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .type-list li, .ability-list li, .stat-list li {
+    margin: 5px 0;
+    font-weight: bold;
+  }
+  
+  .navigation-buttons {
+    margin-top: 20px;
+  }
+  
+  .navigation-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navigation-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
