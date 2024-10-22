@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./DetailView.css"; /// Import the CSS file
+import "./DetailView.css";
 
 const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
 
@@ -61,7 +61,7 @@ const DetailView: React.FC = () => {
 
   return (
     <div className="detail-container">
-      <h1 className="title">Pokemon Details</h1>
+      <h1 className="pokemon-name">{pokemon.name.toUpperCase()}</h1>
       <div className="layout-container">
         {/* image container */}
         <div className="Image-container">
@@ -71,36 +71,50 @@ const DetailView: React.FC = () => {
             alt={pokemon.name}
           />
         </div>
-
         {/* deatils container */}
         <div className="details">
-          <h1 className="pokemon-name">{pokemon.name.toUpperCase()}</h1>
-          <h2 className="subtitle">Details</h2>
-          <p className="info">Height: {pokemon.height / 10} m</p>
-          <p className="info">Weight: {pokemon.weight / 10} kg</p>
+          <div className="info-container">
+            <h2 className="subtitle">Details</h2>
+            <div className="info-container-container">
+              <p className="info">Height: {pokemon.height / 10} m</p>
+              <p className="info">Weight: {pokemon.weight / 10} kg</p>
+            </div>
+          </div>
 
-          <h3 className="subtitle">Types</h3>          
-          {pokemon.types.map((t) => (
-            <p key={t.type.name} className="info">
-              {t.type.name}
-            </p>
-          ))}
+          <div className="info-container">
+            <h3 className="subtitle">Types</h3>
+            <div className="info-container-container">
+              {pokemon.types.map((t) => (
+                <p key={t.type.name} className="info">
+                  {t.type.name}
+                </p>
+              ))}
+            </div>
+          </div>
+          <div className="info-container">
+            <h3 className="subtitle">Abilities</h3>
 
-          <h3 className="subtitle">Abilities</h3>
-          <ul className="ability-list">
-            {pokemon.abilities.map((a) => (
-              <li key={a.ability.name}>{a.ability.name}</li>
-            ))}
-          </ul>
+            <div className="info-container-container">
+              {pokemon.abilities.map((a) => (
+                <p key={a.ability.name} className="info">
+                  {a.ability.name}
+                </p>
+              ))}
+            </div>
+          </div>
 
-          <h3 className="subtitle">Stats</h3>
-          <ul className="stat-list">
-            {pokemon.stats.map((s) => (
-              <li key={s.stat.name}>
-                <strong>{s.stat.name}:</strong> {s.base_stat}
-              </li>
-            ))}
-          </ul>
+          <div className="info-container">
+            <div className="subtitle-container">
+              <h3 className="subtitle">Stats</h3>
+            </div>
+            <div className="info-container-container">
+              {pokemon.stats.map((s) => (
+                <p key={s.stat.name} className="info">
+                  <strong>{s.stat.name}:</strong> {s.base_stat}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

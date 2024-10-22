@@ -20,7 +20,7 @@ const ListView: React.FC = () => {
   const [sortOrder, setSortOrder] = useState<string>('asc');
   const navigate = useNavigate();
 
-  // Fetch Pokémon data
+
   useEffect(() => {
     const fetchPokemon = async () => {
       const pokemonPromises = [];
@@ -33,12 +33,10 @@ const ListView: React.FC = () => {
     fetchPokemon();
   }, []);
 
-  // Handle search query
   const filteredPokemon = pokemonList.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Sort the filtered Pokémon list
   const sortedPokemon = [...filteredPokemon].sort((a, b) => {
     if (sortField === 'name') {
       return sortOrder === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
@@ -46,12 +44,10 @@ const ListView: React.FC = () => {
     return sortOrder === 'asc' ? a.base_experience - b.base_experience : b.base_experience - a.base_experience;
   });
 
-  // Navigate to detail view on Pokémon click
   const handlePokemonClick = (id: number) => {
     navigate(`/mp2/pokemon/${id}`);
   };
 
-  // Render each row in the virtualized list
   const renderRow = (props: ListChildComponentProps) => {
     const { index, style } = props;
     const pokemon = sortedPokemon[index];
