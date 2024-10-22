@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
 
 // Define the structure of the Pokémon's type data
 interface PokemonType {
@@ -25,7 +26,7 @@ const GalleryView: React.FC = () => {
     const fetchPokemon = async () => {
       const pokemonPromises = [];
       for (let i = 1; i <= 70; i++) {
-        pokemonPromises.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`));
+        pokemonPromises.push(axios.get(`${proxyUrl}https://pokeapi.co/api/v2/pokemon/${i}`));
       }
       const responses = await Promise.all(pokemonPromises);
       setGallery(responses.map((res) => res.data));

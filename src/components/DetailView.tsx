@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
 
 // Define types for Pokemon attributes
 interface PokemonType {
@@ -36,7 +37,7 @@ const DetailView: React.FC = () => {
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+        const response = await axios.get(`${proxyUrl}https://pokeapi.co/api/v2/pokemon/${name}`);
         setPokemon(response.data);
       } catch (error) {
         console.error('Error fetching Pokémon details:', error);

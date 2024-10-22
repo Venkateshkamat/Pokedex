@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import axios from 'axios';
+const proxyUrl = 'https://thingproxy.freeboard.io/fetch/'; // Public CORS proxy
 
 interface Pokemon {
   name: string;
@@ -21,7 +22,7 @@ const ListView: React.FC = () => {
     const fetchPokemon = async () => {
       const pokemonPromises = [];
       for (let i = 1; i <= 20; i++) {
-        pokemonPromises.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`));
+        pokemonPromises.push(axios.get(`${proxyUrl}https://pokeapi.co/api/v2/pokemon/${i}`));
       }
       const responses = await Promise.all(pokemonPromises);
       setPokemonList(responses.map((res) => res.data));
