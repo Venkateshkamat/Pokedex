@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route} from "react-router-dom";
+import ListView from "./components/ListView";
+import GalleryView from "./components/GalleryView";
+import DetailView from "./components/DetailView";
+import { useNavigate } from 'react-router-dom';
+
+
 
 function App() {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>MP2 Application</h1>
+      <button onClick={() => navigate(`/gallery`)}>Gallery View</button>
+      <button onClick={() => navigate(`/`)}>List View</button>
+      <Routes>
+        <Route path="/" element={<ListView />} />
+        <Route path="/gallery" element={<GalleryView />} />
+        <Route path="/pokemon/:name" element={<DetailView />} />
+      </Routes>
     </div>
   );
 }
