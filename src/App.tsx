@@ -14,12 +14,12 @@ function App() {
   return (
     <div>
       <h1>MP2 Application</h1>
-      <button onClick={() => navigate(`/gallery`)}>Gallery View</button>
-      <button onClick={() => navigate(`/`)}>List View</button>
+      <button onClick={() => navigate(`/mp2/gallery`)}>Gallery View</button>
+      <button onClick={() => navigate(`/mp2/`)}>List View</button>
       <Routes>
-        <Route path="/" element={<ListView />} />
-        <Route path="/gallery" element={<GalleryView />} />
-        <Route path="/pokemon/:name" element={<DetailView />} />
+        <Route path="/mp2/" element={<ListView />} />
+        <Route path="/mp2/gallery" element={<GalleryView />} />
+        <Route path="/mp2/pokemon/:name" element={<DetailView />} />
       </Routes>
     </div>
   );

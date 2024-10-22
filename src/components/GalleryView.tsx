@@ -98,7 +98,7 @@ const GalleryView: React.FC = () => {
           <div
             key={pokemon.name}
             style={{ cursor: 'pointer', textAlign: 'center' }}
-            onClick={() => navigate(`/pokemon/${pokemon.name}`)} // Navigate to DetailView
+            onClick={() => navigate(`/mp2/pokemon/${pokemon.name}`)} // Navigate to DetailView
           >
             <img
               src={pokemon.sprites.front_default}

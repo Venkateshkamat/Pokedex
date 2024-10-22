@@ -55,7 +55,7 @@ const DetailView: React.FC = () => {
     if (newId > 1010) return;
 
     // Navigate to the new Pokémon using its ID
-    navigate(`/pokemon/${newId}`);
+    navigate(`/mp2/pokemon/${newId}`);
   };
 
   if (!pokemon) return <p>Loading...</p>;

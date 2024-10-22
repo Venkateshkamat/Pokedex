@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import axios from 'axios';
 
 interface Pokemon {
   name: string;
   base_experience: number;
+  id: number; // Add the ID to be used for navigation
 }
 
 const ListView: React.FC = () => {
@@ -11,6 +13,8 @@ const ListView: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortField, setSortField] = useState<string>('name'); // Sorting field (default: name)
   const [sortOrder, setSortOrder] = useState<string>('asc'); // Sorting order (default: ascending)
+
+  const navigate = useNavigate(); // Initialize navigation function
 
   // Fetch Pokémon data
   useEffect(() => {
@@ -32,16 +36,20 @@ const ListView: React.FC = () => {
 
   // Sort the filtered Pokémon list
   const sortedPokemon = [...filteredPokemon].sort((a, b) => {
-    // Sort by the selected field
     if (sortField === 'name') {
-      if (sortOrder === 'asc') return a.name.localeCompare(b.name);
-      return b.name.localeCompare(a.name);
+      return sortOrder === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
     } else if (sortField === 'base_experience') {
-      if (sortOrder === 'asc') return a.base_experience - b.base_experience;
-      return b.base_experience - a.base_experience;
+      return sortOrder === 'asc'
+        ? a.base_experience - b.base_experience
+        : b.base_experience - a.base_experience;
     }
     return 0;
   });
+
+  // Handle click on a Pokémon to navigate to the Detail View
+  const handlePokemonClick = (id: number) => {
+    navigate(`/mp2/pokemon/${id}`); // Navigate to the detail view with the Pokémon's ID
+  };
 
   return (
     <div>
@@ -69,7 +77,11 @@ const ListView: React.FC = () => {
       {/* Pokémon List */}
       <ul style={{ marginTop: '20px' }}>
         {sortedPokemon.map((pokemon) => (
-          <li key={pokemon.name}>
+          <li
+            key={pokemon.id}
+            onClick={() => handlePokemonClick(pokemon.id)} // On click, navigate to detail view
+            style={{ cursor: 'pointer', marginBottom: '10px' }}
+          >
             {pokemon.name} - Base Experience: {pokemon.base_experience}
           </li>
         ))}
