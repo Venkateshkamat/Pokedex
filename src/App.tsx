@@ -5,7 +5,7 @@ import GalleryView from "./components/GalleryView";
 import DetailView from "./components/DetailView";
 import Navbar from "./components/Navbar";
 
-import "./App.css"
+import "./App.css";
 
 function App() {
   return (

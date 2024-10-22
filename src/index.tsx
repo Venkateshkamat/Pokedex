@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Import from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import { PokemonProvider } from './PokemonContext'; // Import the provider
+import { PokemonProvider } from './PokemonContext'; 
 
-// Create the root element
+
 const rootElement = document.getElementById('root');
 
-// Ensure the root element exists
+
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
 

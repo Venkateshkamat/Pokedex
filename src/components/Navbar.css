@@ -1,43 +1,50 @@
-/* Navbar container styling */
+
 .navbar {
-    background-color: #ffcb05;
-    box-shadow: none;
-    height: 70px;
-    
-  }
+  background-color: #ff9705 !important;
+  box-shadow: none;
+  height: 70px;
+  padding-right: 30px;
+  align-items: center;
+  padding-left: 20px;
+}
+
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
   
-  /* Toolbar inside the navbar */
-  .toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 16px;
-  }
-  
-  /* Pokémon logo styling */
-  .logo-container {
-    display: flex;
-    align-items: flex-start;
-    .logo{
-        font-family: Montserrat, sans-serif;
-    }
-  }
-  
-  .pokemon-logo {
-    height: 50px;
-    cursor: pointer;
-  }
-  
-  /* Navigation buttons styling */
-  .nav-links button {
-    margin-left: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #3b4cca;
-  }
-  
-  .nav-links button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
+}
+.btn{
+  color: rgb(0, 0, 0) !important;
+  font-family: "Press Start 2p", cursive !important;
+  font-size: 14px !important;
+}
+
+.nav-links button {
+  margin-left: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
