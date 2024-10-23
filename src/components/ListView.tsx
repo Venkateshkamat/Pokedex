@@ -47,7 +47,7 @@ const ListView: React.FC = () => {
   });
 
   const handlePokemonClick = (id: number) => {
-    navigate(`/mp2/pokemon/${id}`);
+    navigate(`/pokemon/${id}`);
   };
 
   return (

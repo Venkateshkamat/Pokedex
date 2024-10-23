@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
       <Toolbar className="toolbar">
         {/* Pokémon Logo */}
         <Box className="logo-container">
-        <Button component={Link} to="/mp2/" >
+        <Button component={Link} to="/" >
         <img src={logo} alt="Pikachu Logo" className="logo-img" />
           </Button>
           
@@ -18,10 +18,10 @@ const Navbar: React.FC = () => {
 
         {/* Navigation Links */}
         <Box className="nav-links">
-          <Button component={Link} to="/mp2/gallery" className="btn" >
+          <Button component={Link} to="/gallery" className="btn" >
             Gallery
           </Button>
-          <Button component={Link} to="/mp2/" className="btn">
+          <Button component={Link} to="/" className="btn">
             ListView
           </Button>
         </Box>

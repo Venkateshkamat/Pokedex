@@ -52,7 +52,7 @@ const DetailView: React.FC = () => {
 
     if (newId < 1 || newId > 1010) return;
 
-    navigate(`/mp2/pokemon/${newId}`);
+    navigate(`/pokemon/${newId}`);
   };
 
   if (!pokemon) return <p>Loading...</p>;

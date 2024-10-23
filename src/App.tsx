@@ -14,9 +14,9 @@ function App() {
 
       <div className="main--body">
         <Routes>
-          <Route path="/mp2/" element={<ListView />} />
-          <Route path="/mp2/gallery" element={<GalleryView />} />
-          <Route path="/mp2/pokemon/:name" element={<DetailView />} />
+          <Route path="/" element={<ListView />} />
+          <Route path="/gallery" element={<GalleryView />} />
+          <Route path="/pokemon/:name" element={<DetailView />} />
         </Routes>
       </div>
     </div>

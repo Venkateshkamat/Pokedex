@@ -72,7 +72,7 @@ const GalleryView: React.FC = () => {
           <div
             key={pokemon.name}
             className="pokemon-card"
-            onClick={() => navigate(`/mp2/pokemon/${pokemon.name}`)}
+            onClick={() => navigate(`/pokemon/${pokemon.name}`)}
           >
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
             <p>{pokemon.name}</p>
